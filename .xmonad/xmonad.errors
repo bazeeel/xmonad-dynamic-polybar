@@ -1,0 +1,15 @@
+
+xmonad.hs:97:16: warning: [-Wdeprecations]
+    In the use of ‘spacing’ (imported from XMonad.Layout.Spacing):
+    Deprecated: "Use spacingRaw instead."
+   |
+97 |      twopane = spacing 3 $ TwoPane delta ratio
+   |                ^^^^^^^
+
+xmonad.hs:111:15: warning: [-Wdeprecations]
+    In the use of ‘defaultTheme’
+    (imported from XMonad.Layout.DecorationMadness, but defined in XMonad.Layout.Decoration):
+    Deprecated: "Use def (from Data.Default, and re-exported by XMonad.Layout.Decoration) instead."
+    |
+111 | myTabConfig = defaultTheme {
+    |               ^^^^^^^^^^^^
