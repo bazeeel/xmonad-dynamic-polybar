@@ -123,10 +123,10 @@ myTabConfig = defaultTheme {
 
 myScratchPads :: [NamedScratchpad]
 myScratchPads = [
-    NS "scratchpad" "urxvt -name scratchpad" (resource =? "scratchpad")
+    NS "scratchpad" "alacritty --class=scratchpad -t scratchpad" (title =? "scratchpad")
         (customFloating $ W.RationalRect (1/4) (1/4) (2/4) (2/4)),
 
-    NS "ncmpcpp" "urxvt -name 'ncmpcpp' -e ncmpcpp" (resource =? "ncmpcpp")
+    NS "ncmpcpp" "alacritty --class=scratchpad -t ncmpcpp -e ncmpcpp" (title =? "ncmpcpp")
         (customFloating $ W.RationalRect (1/4) (1/4) (2/4) (2/4)),
 
     NS "pavucontrol" "pavucontrol" (className =? "Pavucontrol")
@@ -155,9 +155,9 @@ myManageHook = composeAll . concat $
     , [resource =? "Downloads" --> doFloat]
     , [resource =? "Save As..." --> doFloat]
     , [resource =? "desktop_window" --> doIgnore]
-    , [resource =? "sxiv" --> (doF W.focusDown <+> doFullFloat)]
+    , [resource =? "sxiv" --> doCenterFloat]
     , [className =? "Lxappearance" --> doCenterFloat]
-    , [className =? "Pavucontrol" --> doCenterFloat]
+    --, [className =? "Pavucontrol" --> doCenterFloat]
     , [className =? "MEGAsync" --> doCenterFloat]
     --, [className =? "URxvt" --> doCenterFloat]
     , [className =? "Zathura" --> doCenterFloat]
