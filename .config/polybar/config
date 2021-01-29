@@ -8,7 +8,7 @@ margin-bottom = 0
 ;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
 throttle-output = 5
 throttle-output-for = 10
-throttle-input-for = 30
+#throttle-input-for = 30
 screenchange-reload = true
 compositing-background = over
 compositing-foreground = over
@@ -47,7 +47,7 @@ text = #99d1ce
 ################################################################################
 
 [bar/mainbar-xmonad]
-monitor = ${env:MONITOR}
+monitor = ${env:MONITOR:DisplayPort-0}
 ;monitor-fallback = HDMI1
 width = 100%
 height = 24
@@ -83,21 +83,20 @@ enable-ipc = true
 ;border-bottom-size = 3
 ;border-color = #2e8b57
 
-padding-left = 2
+padding-left = 0
 padding-right = 0
 
-module-margin-left = 1
+module-margin-left = 0
 module-margin-right = 0
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Iosevka Nerd Font:size=11;1"
-font-1 = "JetBrains Mono:size=10;1"
-font-2 = "FontAwesome:size=13;1"
-font-3 = "Joy Pixels:scale=11;1"
+font-0 = "JetBrains Mono:size=10;1"
+font-1 = "FontAwesome:size=11;1"
+font-2 = "Joy Pixels:scale=10;1"
 
-modules-left = rofi xmonad 
+modules-left = rofi xmonad
 modules-center = cpu-graph
-modules-right = itemp sep mem sep weather sep date sep pavolume sep power
+modules-right = itemp sep mem sep weather sep date sep pavolume sep power sep
 
 #tray-position = none
 
@@ -174,7 +173,7 @@ type = custom/script
 exec = ~/.local/bin/statusbar/memory
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-padding = 1
+format-padding = 0
 interval = 1
 format-prefix = "💡 "
 
@@ -195,7 +194,7 @@ type = custom/script
 exec = $HOME/.local/bin/statusbar/weather
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-padding = 1
+format-padding = 0
 tail = true
 
 
@@ -502,7 +501,7 @@ content-foreground = ${colors.foreground}
 content-background = ${colors.background}
 ;format-foreground = ${colors.foreground}
 ;format-background = ${colors.background}
-content-padding = 2
+content-padding = 0
 
 click-left = power
 
@@ -512,15 +511,15 @@ type = custom/text
 content = 
 content-foreground = ${colors.foreground}
 content-background = ${colors.background}
-content-padding = 2
+content-padding = 1
 
-click-left = zathura $HOME/.local/share/Magyarch-bspwm.pdf &
+click-left = zathura $HOME/.local/share/Magyarch-xmonad.pdf &
 
 
 [module/rofi]
 type = custom/text
-content = "Xmonad" 
-content-padding = 2
+content = "Xmonad"
+content-padding = 1
 content-foreground = #2f2b26
 ;content-background = #ffa500
 content-background = 2e8b57
@@ -538,7 +537,7 @@ exec = $HOME/.local/bin/statusbar/volume &
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-format-padding = 1
+format-padding = 0
 interval = 1
 
 click-left = exec pavucontrol
@@ -552,8 +551,8 @@ click-left = $TERMFLOAT -g 70x20-30+30 -e calcurse
 click-right = killall -9 calcurse &
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-padding = 1
-format-prefix = " 📅  "
+format-padding = 0
+format-prefix = "📅 "
 interval=30
 
 [module/arrow1]
